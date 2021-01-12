@@ -66,7 +66,19 @@ class Board:
         rd_num = rd.randint(0,len(pos)-1)
         return pos[rd_num]
 
-        
+    def ai_hard(self, decorator):
+        player = 0
+        ai = 0
+        # my positions
+        for i,x in enumerate(self.board):
+            for j,y in enumerate(x):
+                if y == 1:
+                    player += 2**(i+j)
+                elif y == 2:
+                    ai += 2**(i+j)
+
+        # magic C AI function
+        return 1
 
 class Player:
     def __init__(self, name, is_ai, sign):
